@@ -31,7 +31,7 @@ Para algunos de ellos, era importante saber las debilidades de los pokemones.
 
 El prototipo de baja fidelidad fue el primer boceto realizado con papel y lápiz de la interfaz de usuario.
 
-![Prototipo](src/img/prototipobaja.jpg)
+![Prototipo](/src/img/prototipobaja.jpg)
 ### Prototipo de alta fidelidad
 
 El prototipo de alta fidelidad fue realizado a través de figma, centrándonos en que la interfaz fuera autodescriptiva. Además, que sea representativa de pokémon, utilizando colores alusivos a la serie.
