@@ -1,37 +1,41 @@
-# Pokémon
+# **Pokémon**
 
-Pokémon GO es una experiencia de juego internacional que cuenta con más de mil
-millones de descargas y ha sido nombrada "el mejor juego para móviles" por
-Game Developers Choice Awards y "la mejor aplicación del año" por TechCrunch
-(tomado de Google Play). Los usuarios del juego se convierten en "Maestros/
-entrenadores de Pokémon" y pueden:
+## Definición del producto
+Se decidió desarrollar una página web con el nombre de PokePedia Interactiva, que tiene como usuarios principales a aquellas personas que quieran conocer más sobre la serie y así puedan conocer sobre las características principales de los Pokémon, sus nombres, tipos, debilidades y teniendo la posibilidad de ordenarlos alfabéticamente.
 
-- **Descubrir el mundo Pokémon:** explorar y descubrir nuevos Pokémon allá
-  donde vayan.
-- **Atrapar** distintos Pokémon para completar su Pokédex.
-- **Pelear** contra Pokémon de otros entrenadores y conquistar un gimnasio.
-- **Competir** en épicos combates contra otros entrenadores.
-- **Hacer equipo** con otros entrenadores para atrapar poderosos Pokémon
-  durante las incursiones.
+### El usuario
+Se analizó y priorizó a través de encuestas resolver las problemáticas para las personas que quieren conocer más sobre la serie.
 
-## Hallazgos
+## Problemáticas
 
-Para entender mejor qué necesidades complementarias a la app tienen los
-usuarios, hicimos una rápida investigación (research) y estos son algunos
-de los hallazgos.
+Los usuarios expresaron que al existir una larga variedad de pokemones se dificulta recordar sus características.
+Los usuarios expresaron que es complicado separar a cada pokémon según tipo.
+Los usuarios no sabían cuánto pesaban y median.
+Para algunos de ellos, era importante saber las debilidades de los pokemones.
 
-- Los Pokémon tienen características únicas que determinan las decisiones que
-  toma el usuario (tipo, debilidad, peso, multiplicador, etc.)
-- Un maestro Pokémon antes de salir a casar los Pokémon tienen que:
-  saber el top 10 de frecuencia de aparición de los Pokémon.
-- Los Pokémon tienen distintos tipos y debilidades de combate. Estas
-  características son importantes cuando un maestro Pokémon elige al Pokémon
-  más adecuado para su batalla. Hay veces que tiene que elegir a los que
-  tienen menos cantidad de debilidades y saber de que tipo son. Por ello, es
-  importante para un maestro Pokémon poder ordenarlos por estas 2
-  características.
-- Los Pokémon evolucionan y es importante para un
-  maestro Pokémon saber cuántas y cuáles son las evoluciones que tienen antes y
-  después.
-- Los Pokémon se alimentan de caramelos y un maestro Pokémon necesita saber
-  cuántos caramelos necesita un Pokémon para evolucionar.
+## Historias de usuario
+
+**HU1**:Yo como fanatico, quiero poder visualizar todos los Pokémon existentes y poder agruparlos según su tipo, para reforzar conocimientos.
+**Definición de terminado**:La HU1 estará terminada cuando en pantalla se puedan visualizar todos los pokémon y el usuario pueda aplicar diferentes filtros según su interés.
+
+**HU2**:Yo como usuario que desea saber más, quiero poder visualizar todos los pokémon y agruparlos según su tipo, para utilizarlo como guía en juegos relacionados.
+**Definición de terminado**:La HU2 estará terminada cuando el usuario pueda visualizar todos los Pokémon que hay en pantalla, para agruparlos según su tipo.
+
+**HU3**:Yo como usuario que desea saber más, quiero poder visualizar, agrupar y ordenar alfabéticamente los pokémon, ya que no conozco mucho de la franquicia, por lo que me gustaría aprender de él.
+**Definición de terminado**:La HU3 estará terminada cuando en pantalla se puedan visualizar todos los pokémon y el usuario pueda agrupar y ordenar alfabéticamente según tipo y nombre.
+
+
+## Diseño de la interfaz de usuario
+
+### Prototipo de baja fidelidad
+
+El prototipo de baja fidelidad fue el primer boceto realizado con papel y lápiz de la interfaz de usuario.
+
+![Prototipo](src/img/prototipobaja.jpg)
+### Prototipo de alta fidelidad
+
+El prototipo de alta fidelidad fue realizado a través de figma, centrándonos en que la interfaz fuera autodescriptiva. Además, que sea representativa de pokémon, utilizando colores alusivos a la serie.
+
+![Prototipo](/src/img/protopkm.png)
+
+
