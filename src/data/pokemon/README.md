@@ -15,14 +15,14 @@ Para algunos de ellos, era importante saber las debilidades de los pokemones.
 
 ## Historias de usuario
 
-**HU1**:Yo como fanatico, quiero poder visualizar todos los Pokémon existentes y poder agruparlos según su tipo, para reforzar conocimientos.
-**Definición de terminado**:La HU1 estará terminada cuando en pantalla se puedan visualizar todos los pokémon y el usuario pueda aplicar diferentes filtros según su interés.
+**HU1**:Yo como usuario que desea saber más, quiero poder visualizar todos los Pokémon existentes para reforzar conocimientos.
+**Definición de terminado**:La HU1 estará terminada cuando en pantalla se puedan visualizar todos los pokémon.
 
-**HU2**:Yo como usuario que desea saber más, quiero poder visualizar todos los pokémon y agruparlos según su tipo, para utilizarlo como guía en juegos relacionados.
-**Definición de terminado**:La HU2 estará terminada cuando el usuario pueda visualizar todos los Pokémon que hay en pantalla, para agruparlos según su tipo.
+**HU2**:Yo como usuario que desea saber más, quiero poder agruparlos según tipo, para utilizarlo como guía en juegos relacionados.
+**Definición de terminado**:La HU2 estará terminada cuando el usuario pueda agruparlos según tipo.
 
-**HU3**:Yo como usuario que desea saber más, quiero poder visualizar, agrupar y ordenar alfabéticamente los pokémon, ya que no conozco mucho de la franquicia, por lo que me gustaría aprender de él.
-**Definición de terminado**:La HU3 estará terminada cuando en pantalla se puedan visualizar todos los pokémon y el usuario pueda agrupar y ordenar alfabéticamente según tipo y nombre.
+**HU3**:Yo como usuario que desea saber más, quiero ordenar alfabéticamente los pokémon, ya que no conozco mucho de la franquicia, por lo que me gustaría aprender de él.
+**Definición de terminado**:La HU3 estará terminada cuando el usuario pueda ordenar alfabéticamente.
 
 
 ## Diseño de la interfaz de usuario
