@@ -92,3 +92,16 @@ nav .search {
 .search input:focus {
   width: 240px;
 }
+
+main {
+  margin: 0px;
+  padding: 30px;
+
+}
+
+main .root {
+  margin: 50px;
+  padding: 40px;
+  width: 1440px;
+  
+}
