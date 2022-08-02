@@ -2,42 +2,33 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Poképedia interactiva</title>
+    <title>Pokepedia Interactiva</title>
+    <script src= " https://kit.fontawesome.com/c1eae85dfa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
-  </head>
+  </head> 
+
   <body>
+    <div class= "irArribaBoton" class= "ocultar">
+      <i class= "fa fa-angle-up fa-4x"> </i></div>
     <div class="container">
-      <header>
-        <div class="logo">
-          <img src="img/logopikachu.png" width="81" height="68" alt="" />
-        </div>
+      <header class="header">
+        <img src="img/logopikachu.png" width="81" height="68" alt="" />
         <div class="title">
           <img src="img/title.png" width="632.37" height="100" alt="" />
         </div>
       </header>
+
       <nav>
-        <img src="img/question.png" width="280" height="35" alt="" />
-        <div class="search">
-          <input type="text" placeholder="search" />
-          <div class="button">
-            <img src="img/loupe.png" width="30" height="30" alt="" />
-          </div>
-        </div>
-        <div class="filter">
-          <img src="img/filter.png" width="30" height="30" alt="" />
-        </div>
-        <div class="save">
-          <img src="img/save.png" width="211" height="35" alt="" />
-        </div>
-        <div class="pokeball">
-          <img src="img/pokeball.png" width="40" height="40" alt="" />
-        </div>
+        <input class="inputSearch" type="text" name="" placeholder="¿Quién es este pokémon?" />
+        <button id="buttonSearch" class="button-search" type="submit" name="" value="Search">Search</button> 
       </nav>
+
+      <main>
+        <div class="root" id="root"></div>
+      </main>
     </div>
-    <main>
-      <div class="root" id="root"></div>
-    </main>
-    </div>
+  </div>
+
     <script src="main.js" type="module"></script>
   </body>
 </html>

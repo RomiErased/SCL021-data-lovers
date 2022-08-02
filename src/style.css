@@ -4,104 +4,193 @@
   box-sizing: border-box;
 }
 
+body {
+  background: url(img/fondo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 20em;
+}
+
 .container {
-  width: 100%;
-  max-width: 1500px;
-  /*flexbox*/
+  margin: auto;
   display: flex;
   flex-flow: row wrap;
 }
 
-body {
-  background-image: url(img/fondo.jpg);
-}
-
-header {
+.header {
   width: 100%;
   padding: 20px;
-  /* Flexbox */
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   flex-direction: row;
-  flex-wrap: wrap;
 }
-
-header .title {
-  margin: auto;
+.header img {
 }
-
 nav {
-  padding: 20px;
-  display: flex;
-  justify-content: space-evenly;
-  position: absolute;
-  width: 1458px;
-  height: 91px;
-  left: 0px;
-  top: 120px;
   background: #ffde00;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-nav img {
-  margin: 10px;
-}
-
-nav .search {
-  position: relative;
-  padding: 5px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.search input {
-  width: 0px;
-  height: 40px;
-  padding: 10px 20px;
-  font-size: 18px;
-  color: #222;
+input {
+  /*position: relative;*/
+  /*display: inline-block;*/
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+input[type="text"] {
+  background: #fff;
+  width: 350px;
+  height: 30px;
+  border: none;
   outline: none;
-  border: 1px solid silver;
-  border-radius: 40px;
-  transition: all 0.6s ease;
+  padding: 0 25px;
+  border-radius: 25px 0px 0px 25px;
 }
 
-.button {
-  width: 50px;
-  height: 50px;
-  line-height: 55px;
-  top: 0;
-  right: 0;
-  position: absolute;
-  background: white;
-  text-align: center;
-  font-size: 18px;
-  border-radius: 50%;
-  border: 1 px solid black;
+.button-search {
+  position: relative;
+  left: -5px;
+  border-radius: 0px 25px 25px 0;
+  width: 150px;
+  height: 30px;
+  border: none;
+  outline: none;
   cursor: pointer;
+  background: #cc0000;
+  color: #fff;
 }
 
-.button img {
-  margin-top: 10px;
-}
-
-.search:hover input {
-  width: 240px;
-}
-
-.search input:focus {
-  width: 240px;
+button[type="submit"]:hover {
+  background: #3b4cca;
 }
 
 main {
-  margin: 0px;
-  padding: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.pokemon-card {
+  border-radius: 20px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  background: rgba(235, 233, 233, 0.2);
+}
+
+.pokemon-card img {
+  width: 120px;
+  height: 120px;
+}
+
+/*Estilo del nombre*/
+p {
+  font-size: 21px;
+  letter-spacing: 0.3mm;
+  margin-top: 8px;
+  text-transform: capitalize; /*para que cada primera letra este en mayus */
+  font-weight: bolder;
+  color: black;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+/* Estilo del type*/
+h5 {
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  background: #7ece34;
+  margin: auto;
+  border-radius: 20px;
+  max-width: 60%;
+  height: 20px;
+  text-transform: capitalize;
 
 }
 
-main .root {
-  margin: 50px;
-  padding: 40px;
-  width: 1440px;
-  
+
+
+
+
+
+
+@media screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  body {
+  }
+
+  header {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  header .logo {
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  nav .button-search {
+    width: 15%;
+  }
+}
+
+.container-pokemon {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+}
+
+.irArribaBoton {
+  position: fixed;
+  z-index: 1000;
+  right: 25px;
+  bottom: 25px;
+  background-color: #3b4cca;
+  width: 64px;
+  height: 64px;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  transition: all .2s;
+
+}
+
+.irArribaBoton:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.ocultar {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mostrar {
+  opacity: 1;
+  visibility: visible;
 }
