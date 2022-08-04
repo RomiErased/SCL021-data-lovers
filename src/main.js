@@ -25,13 +25,27 @@ for (let i = 0; i < dataPokemon.length; i++) {
   cardPokemon.appendChild(typePokemon);
 }
 
-const search = document.querySelector('.inputSearch');
+const search = document.querySelector(".inputSearch");
 
-search.addEventListener('keyup',(e) => {
-    console.log(e.target.value)
+search.addEventListener("keyup", (e) => {
+  console.log(e.target.value);
 });
 
+//funcionalidad de botón inferior derecho para subir al principio
+addEventListener("DOMContentLoaded", () => {
+  const irArribaBoton = document.querySelector(".irArribaBoton");
 
+  const obtener_pixeles_inicio = () =>
+    document.documentElement.scrollTop || document.body.scrollTop;
+  const irArriba = () => {
+    if (obtener_pixeles_inicio() > 0) {
+      requestAnimationFrame(irArriba);
+      scrollTo(0, obtener_pixeles_inicio() - obtener_pixeles_inicio() / 20);
+    }
+
+    irArribaBoton.addEventListener("click", irArriba);
+  };
+});
 
 //console.log(dataPokemon[0]);
 //console.log(data.pokemon);
