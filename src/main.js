@@ -2,9 +2,9 @@ import data from "./data/pokemon/pokemon.js";
 
 const pokedex = document.getElementById("root");
 
-const dataPokemon = data.pokemon;
-function renderpokemon (pokemons = dataPokemon) {
-  pokedex.innerHTML = '';
+let dataPokemon = data.pokemon;
+function renderpokemon(pokemons = dataPokemon) {
+  pokedex.innerHTML = "";
   for (let i = 0; i < pokemons.length; i++) {
     // Crear un div para cada pokemon
     const cardPokemon = document.createElement("div");
@@ -21,7 +21,7 @@ function renderpokemon (pokemons = dataPokemon) {
     const typePokemon = document.createElement("h5");
     typePokemon.textContent = `${pokemons[i].type}`;
     pokedex.appendChild(typePokemon);
-  
+
     cardPokemon.appendChild(img);
     cardPokemon.appendChild(div);
     cardPokemon.appendChild(typePokemon);
@@ -29,24 +29,39 @@ function renderpokemon (pokemons = dataPokemon) {
 }
 renderpokemon();
 
+const search = document.querySelector(".inputSearch");
+const button = document.querySelector(".button-search");
+const selectFilter = document.querySelector("#select-filter");
+const selectType = document.querySelector("#select-type");
 
-const search = document.querySelector('.inputSearch');
-const button = document.querySelector('.button-search')
 
-// //Teclado
-search.addEventListener('keyup',(e) => {
- let search = e.target.value;
- console.log(search);
-});
+// // //Teclado
+// search.addEventListener("keyup", (e) => {
+//   let search = e.target.value;
+//   console.log(search);
+// });
 
-//Button
+//Filtrar según busqueda
 button.addEventListener("click", function () {
-  const resultado = dataPokemon.filter(function(pokemon) {
-    return pokemon.name.includes(search.value)
-  })
+  const resultado = dataPokemon.filter(function (pokemon) {
+    return pokemon.name.includes(search.value);
+  });
   renderpokemon(resultado);
-  console.log(resultado)
+  console.log(resultado);
 });
+
+function handleChange (e){
+  let result = [...dataPokemon]
+  if (selectFilter.value === "a-z") {
+    result.sort((a, b) => (a.name > b.name) ? 1 : -1)
+  }
+  renderpokemon(result.filter());
+}
+
+selectFilter.addEventListener("change",handleChange);
+selectType.addEventListener("change",handleChange);
+
+
 
 
 
