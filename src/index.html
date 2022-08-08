@@ -19,8 +19,21 @@
       <nav>
         <input class="inputSearch" type="text" placeholder="¿Quién es este pokémon?" />
         <button class="button-search" type="submit" name="" value="Search">Search</button> 
-        <div class="filter">
-          <img src="img/sort.png" width="40px" height="40px" alt="filtericon">
+        <div class="filter-condition">
+          <span>Order by </span>
+          <select name="" id="select-filter">
+            <option value="all"> All </option>
+            <option value="type"> Type </option>
+            <option value="a-z"> A-Z </option>
+          </select>
+          <select name="" id="select-type">
+            <option value="poison"> Poison </option>
+            <option value="fire"> Fire </option>
+            <option value="grass"> Grass </option>
+            <option value="fairy"> Fairy </option>
+            <option value="water"> Water </option>
+            <option value="ground"> Ground </option>
+          </select>
         </div>
       </nav>
 

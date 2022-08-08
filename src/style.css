@@ -26,8 +26,7 @@ body {
   justify-content: center;
   flex-direction: row;
 }
-.header img {
-}
+
 nav {
   background: #ffde00;
   width: 100%;
@@ -38,8 +37,6 @@ nav {
 }
 
 input {
-  /*position: relative;*/
-  /*display: inline-block;*/
   font-size: 15px;
   box-sizing: border-box;
   transition: 0.5s;
@@ -126,6 +123,30 @@ h5 {
   max-width: 60%;
   height: 20px;
   text-transform: capitalize;
+}
+
+.filter-condition {
+  padding: 15px;
+  height: 50px;
+  width: 15%;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.filter-condition select {
+  width: 100px;
+  height: 30px;
+  padding: 0 0 0 10px;
+  border-radius: 25px 25px 25px 25px;
+  outline: none;
+  font-weight: bolder;
+  color: black;
+  background: #7ed4c9;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
 }
 
 @media screen and (max-width: 800px) {
