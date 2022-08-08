@@ -31,28 +31,41 @@ renderpokemon();
 
 const search = document.querySelector(".inputSearch");
 const button = document.querySelector(".button-search");
-const selectFilter = document.querySelector("#select-filter");
-const selectType = document.querySelector("#select-type");
+const selectSort = document.querySelector(".sort-AZ");
+const selectType = document.querySelector(".select-type");
 
 
 //Filtrar según busqueda
 button.addEventListener("click", function () {
-  const resultado = dataPokemon.filter(function (pokemon) {
-    return pokemon.name.includes(search.value);
+  const resultado = dataPokemon.filter(function (pokemons) {
+    return pokemons.name.includes(search.value);
   });
   renderpokemon(resultado);
 });
 
-function handleChange (e){
+// Ordenar alfabéticamente
+function handleSortChange (event){
+  //console.log(event.target.value);
   let result = [...dataPokemon]
-  if (selectFilter.value === "a-z") {
+  if (event.target.value === "a-z") {
     result.sort((a, b) => (a.name > b.name) ? 1 : -1)
   }
-  renderpokemon(result.filter());
+  renderpokemon(result);
 }
 
-selectFilter.addEventListener("change",handleChange);
-selectType.addEventListener("change",handleChange);
+function handleTypeChange (event) {
+  console.log(event.target.value);
+  let result = [...dataPokemon]
+  if ( event.target.value === "bug") {
+    result.filter(pokemon => pokemon.type ==="bug");
+  }
+  
+}
+
+
+
+selectSort.addEventListener("change",handleSortChange);
+selectType.addEventListener("change",handleTypeChange);
 
 
 //console.log(dataPokemon[0]);
