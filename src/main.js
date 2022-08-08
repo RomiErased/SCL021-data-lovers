@@ -35,19 +35,12 @@ const selectFilter = document.querySelector("#select-filter");
 const selectType = document.querySelector("#select-type");
 
 
-// // //Teclado
-// search.addEventListener("keyup", (e) => {
-//   let search = e.target.value;
-//   console.log(search);
-// });
-
 //Filtrar según busqueda
 button.addEventListener("click", function () {
   const resultado = dataPokemon.filter(function (pokemon) {
     return pokemon.name.includes(search.value);
   });
   renderpokemon(resultado);
-  console.log(resultado);
 });
 
 function handleChange (e){
@@ -60,9 +53,6 @@ function handleChange (e){
 
 selectFilter.addEventListener("change",handleChange);
 selectType.addEventListener("change",handleChange);
-
-
-
 
 
 //console.log(dataPokemon[0]);
