@@ -49,7 +49,7 @@ button.addEventListener("click", function () {
   console.log(resultado);
 });
 
-function handleSortChange(event) {
+function handleChange(e) {
   let result = [...dataPokemon];
   if (selectFilter.value === "a-z") {
     result.sort((a, b) => (a.name > b.name ? 1 : -1));
@@ -57,7 +57,7 @@ function handleSortChange(event) {
   renderpokemon(result.filter());
 }
 
-selectFilter.addEventListener("change", handleSortChange);
+selectFilter.addEventListener("change", handleChange);
 selectType.addEventListener("change", handleChange);
 
 //funcionalidad de botón inferior derecho para subir al principio
