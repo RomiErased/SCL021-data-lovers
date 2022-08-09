@@ -1,6 +1,7 @@
 import data from "./data/pokemon/pokemon.js";
 
 const pokedex = document.getElementById("root");
+const close = document.getElementById ("close");
 
 let dataPokemon = data.pokemon;
 function renderpokemon(pokemons = dataPokemon) {
@@ -22,12 +23,23 @@ function renderpokemon(pokemons = dataPokemon) {
     typePokemon.textContent = `${pokemons[i].type}`;
     pokedex.appendChild(typePokemon);
 
+    cardPokemon.addEventListener("click", () => {
+      popUp.open = true;
+      const popUpContent = document.createElement("div");
+      popUpContent.innerHTML = pokemons[i].name;
+      popUp.removeChild(popUp.lastChild);
+      popUp.appendChild(popUpContent);
+    })
     cardPokemon.appendChild(img);
     cardPokemon.appendChild(div);
     cardPokemon.appendChild(typePokemon);
+
   }
 }
 renderpokemon();
+
+
+
 //funcion para recargar la página desde el header
 const title = document.querySelector(".title");
 title.addEventListener("click", function () {
@@ -38,6 +50,12 @@ const search = document.querySelector(".inputSearch");
 const formSearch = document.querySelector(".search"); //funcion para que al dar enter o presionar search en barra buscadora muestre los resultados
 const selectSort = document.querySelector(".sort-AZ");
 const selectType = document.querySelector(".select-type");
+const popUp = document.querySelector("#popUp");
+
+close.addEventListener ("click", () => {
+  popUp.open = false;
+});
+
 
 //Filtrar según busqueda
 formSearch.addEventListener("submit", function (event) {
@@ -48,6 +66,7 @@ formSearch.addEventListener("submit", function (event) {
   renderpokemon(resultado);
 });
 
+
 // Ordenar alfabéticamente
 function handleSortChange(event) {
   //console.log(event.target.value);
@@ -57,19 +76,19 @@ function handleSortChange(event) {
   }
   renderpokemon(result);
 }
-
+// Filtrar según tipo de pokemon
 function handleTypeChange (event) {
-  console.log(event.target.value);
-  let result = [...dataPokemon]
-  if (event.target.value === result.type) {
-    result.filter(pokemons => pokemons.type === result.type);
+  //console.log(event.target.value);
+  let allPokemon = [...dataPokemon]
+  if (event.target.value === "all") {
+    renderpokemon(allPokemon)
+    return;
   }
-  renderpokemon(result.type);
-
-
+  const resultType = allPokemon.filter(function (allPokemon) {
+    return allPokemon.type.includes(event.target.value);
+  });
+  renderpokemon(resultType);
 }
-
-
 
 selectSort.addEventListener("change",handleSortChange);
 selectType.addEventListener("change",handleTypeChange);
@@ -124,3 +143,4 @@ addEventListener("DOMContentLoaded", () => {
   };
   irArribaBoton.addEventListener("click", irArriba);
 });
+

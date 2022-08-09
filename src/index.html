@@ -9,6 +9,9 @@
   </head> 
 
   <body>
+    <!-- <audio controls autoplay>
+      <source src="audio/musicpokemon.mp3">
+    </audio> -->
     <div class="container">
       <header class="header">
         <img src="img/logopikachu.png" width="81" height="68" alt="" />
@@ -22,7 +25,7 @@
            <button class="button-search" type="submit" name="" value="Search">Search</button>
         </form>
         <div class="filter-condition">
-          <span>Filter by </span>
+          <span>Filter by type </span>
           <select name="" class="select-type">
               <option value="all"> All </option>
               <option value="bug"> Bug </option>
@@ -30,7 +33,7 @@
               <option value="dragon"> Dragon </option>
               <option value="electric"> Electric </option>
               <option value="fairy"> Fairy </option>
-              <option value="fight"> Fight </option>
+              <option value="fighting"> Fighting </option>
               <option value="fire"> Fire </option>
               <option value="flying"> Flying </option>
               <option value="ghost"> Ghost </option>
@@ -46,13 +49,11 @@
           </select>
         </div>
         <div class="sort-AZ">
-          <div class="sort">
             <span> Sort by </span>
             <select name="" id="sort">
               <option value=""> Default</option>
               <option value="a-z"> A-Z </option>
             </select>
-          </div>
         </div>
       </nav>
       <main>
@@ -62,7 +63,11 @@
       </main>
     </div>
   </div>
-
+  <dialog id="popUp">
+    <p>hola</p>
+    <button id="close">x</button> 
+  </dialog>
     <script src="main.js" type="module"></script>
+    <script src="data.js" type="module"></script>
   </body>
 </html>
