@@ -2,7 +2,7 @@ import data from "./data/pokemon/pokemon.js";
 
 const pokedex = document.getElementById("root");
 
-const dataPokemon = data.pokemon;
+let dataPokemon = data.pokemon;
 function renderpokemon(pokemons = dataPokemon) {
   pokedex.innerHTML = "";
   for (let i = 0; i < pokemons.length; i++) {
@@ -28,37 +28,46 @@ function renderpokemon(pokemons = dataPokemon) {
   }
 }
 renderpokemon();
-
-const search = document.querySelector(".inputSearch");
-const button = document.querySelector(".button-search");
-const selectFilter = document.querySelector("#select-filter");
-const selectType = document.querySelector("#select-type");
-
-// // //Teclado
-// search.addEventListener("keyup", (e) => {
-//   let search = e.target.value;
-//   console.log(search);
-// });
-
-//Filtrar según busqueda
-button.addEventListener("click", function () {
-  const resultado = dataPokemon.filter(function (pokemon) {
-    return pokemon.name.includes(search.value);
-  });
-  renderpokemon(resultado);
-  console.log(resultado);
+//funcion para recargar la página desde el header
+const title = document.querySelector(".title");
+title.addEventListener("click", function () {
+  location.reload();
 });
 
-function handleChange(e) {
+const search = document.querySelector(".inputSearch");
+const formSearch = document.querySelector(".search"); //funcion para que al dar enter o presionar search en barra buscadora muestre los resultados
+const selectSort = document.querySelector(".sort-AZ");
+const selectType = document.querySelector(".select-type");
+
+//Filtrar según busqueda
+formSearch.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const resultado = dataPokemon.filter(function (pokemons) {
+    return pokemons.name.includes(search.value);
+  });
+  renderpokemon(resultado);
+});
+
+// Ordenar alfabéticamente
+function handleSortChange(event) {
+  //console.log(event.target.value);
   let result = [...dataPokemon];
-  if (selectFilter.value === "a-z") {
+  if (event.target.value === "a-z") {
     result.sort((a, b) => (a.name > b.name ? 1 : -1));
   }
-  renderpokemon(result.filter());
+  renderpokemon(result);
 }
 
-selectFilter.addEventListener("change", handleChange);
-selectType.addEventListener("change", handleChange);
+function handleTypeChange(event) {
+  console.log(event.target.value);
+  let result = [...dataPokemon];
+  if (event.target.value === "bug") {
+    result.filter((pokemon) => pokemon.type === "bug");
+  }
+}
+
+selectSort.addEventListener("change", handleSortChange);
+selectType.addEventListener("change", handleTypeChange);
 
 //funcionalidad de botón inferior derecho para subir al principio
 addEventListener("DOMContentLoaded", () => {
@@ -83,7 +92,3 @@ addEventListener("DOMContentLoaded", () => {
   };
   irArribaBoton.addEventListener("click", irArriba);
 });
-
-//console.log(dataPokemon[0]);
-//console.log(data.pokemon);
-//console.log(data);
