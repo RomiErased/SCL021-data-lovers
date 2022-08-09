@@ -28,15 +28,20 @@ function renderpokemon(pokemons = dataPokemon) {
   }
 }
 renderpokemon();
+//funcion para recargar la página desde el header
+const title = document.querySelector(".title");
+title.addEventListener("click", function () {
+  location.reload();
+});
 
 const search = document.querySelector(".inputSearch");
-const button = document.querySelector(".button-search");
+const formSearch = document.querySelector(".search"); //funcion para que al dar enter o presionar search en barra buscadora muestre los resultados
 const selectSort = document.querySelector(".sort-AZ");
 const selectType = document.querySelector(".select-type");
 
-
 //Filtrar según busqueda
-button.addEventListener("click", function () {
+formSearch.addEventListener("submit", function (event) {
+  event.preventDefault();
   const resultado = dataPokemon.filter(function (pokemons) {
     return pokemons.name.includes(search.value);
   });
@@ -44,11 +49,11 @@ button.addEventListener("click", function () {
 });
 
 // Ordenar alfabéticamente
-function handleSortChange (event){
+function handleSortChange(event) {
   //console.log(event.target.value);
-  let result = [...dataPokemon]
+  let result = [...dataPokemon];
   if (event.target.value === "a-z") {
-    result.sort((a, b) => (a.name > b.name) ? 1 : -1)
+    result.sort((a, b) => (a.name > b.name ? 1 : -1));
   }
   renderpokemon(result);
 }
@@ -93,7 +98,29 @@ addEventListener("DOMContentLoaded", () => {
   irArribaBoton.addEventListener("click", irArriba);
 });
 
+selectSort.addEventListener("change", handleSortChange);
+selectType.addEventListener("change", handleTypeChange);
 
-//console.log(dataPokemon[0]);
-//console.log(data.pokemon);
-//console.log(data);
+//funcionalidad de botón inferior derecho para subir al principio
+addEventListener("DOMContentLoaded", () => {
+  const irArribaBoton = document.querySelector("#irArribaBoton");
+
+  const obtener_pixeles_inicio = () =>
+    document.documentElement.scrollTop || document.body.scrollTop;
+
+  const irArriba = () => {
+    if (obtener_pixeles_inicio() > 0) {
+      requestAnimationFrame(irArriba);
+      scrollTo(0, obtener_pixeles_inicio() - obtener_pixeles_inicio() / 20);
+    }
+    const indicarScroll = () => {
+      if (obtener_pixeles_inicio() > 50) {
+        irArribaBoton.className = "mostrar";
+      } else {
+        irArribaBoton.className = "ocultar";
+      }
+    };
+    window.addEventListener("scroll", indicarScroll);
+  };
+  irArribaBoton.addEventListener("click", irArriba);
+});

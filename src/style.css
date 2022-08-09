@@ -172,6 +172,19 @@ h5 {
   text-transform: capitalize;
 }
 
+.filter-condition {
+  padding: 15px;
+  height: 50px;
+  width: 15%;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+
+
+
+
 
 
 @media screen and (max-width: 800px) {
@@ -204,7 +217,7 @@ h5 {
   width: 100px;
 }
 
-.irArribaBoton {
+#irArribaBoton {
   position: fixed;
   z-index: 1000;
   right: 25px;
@@ -218,7 +231,7 @@ h5 {
   transition: all 0.2s;
 }
 
-.irArribaBoton:hover {
+#irArribaBoton:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
