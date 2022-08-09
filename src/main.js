@@ -58,13 +58,45 @@ function handleSortChange(event) {
   renderpokemon(result);
 }
 
-function handleTypeChange(event) {
+function handleTypeChange (event) {
   console.log(event.target.value);
-  let result = [...dataPokemon];
-  if (event.target.value === "bug") {
-    result.filter((pokemon) => pokemon.type === "bug");
+  let result = [...dataPokemon]
+  if (event.target.value === result.type) {
+    result.filter(pokemons => pokemons.type === result.type);
   }
+  renderpokemon(result.type);
+
+
 }
+
+
+
+selectSort.addEventListener("change",handleSortChange);
+selectType.addEventListener("change",handleTypeChange);
+
+//funcionalidad de botón inferior derecho para subir al principio
+addEventListener("DOMContentLoaded", () => {
+  const irArribaBoton = document.querySelector("#irArribaBoton");
+
+  const obtener_pixeles_inicio = () =>
+    document.documentElement.scrollTop || document.body.scrollTop;
+
+  const irArriba = () => {
+    if (obtener_pixeles_inicio() > 0) {
+      requestAnimationFrame(irArriba);
+      scrollTo(0, obtener_pixeles_inicio() - obtener_pixeles_inicio() / 20);
+    }
+    const indicarScroll = () => {
+      if (obtener_pixeles_inicio() > 50) {
+        irArribaBoton.className = "mostrar";
+      } else {
+        irArribaBoton.className = "ocultar";
+      }
+    };
+    window.addEventListener("scroll", indicarScroll);
+  };
+  irArribaBoton.addEventListener("click", irArriba);
+});
 
 selectSort.addEventListener("change", handleSortChange);
 selectType.addEventListener("change", handleTypeChange);
