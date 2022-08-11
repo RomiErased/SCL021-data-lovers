@@ -7,7 +7,7 @@
 body {
   background: url(img/fondo.jpg);
   background-size: cover;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
@@ -145,17 +145,47 @@ main {
   height: 120px;
 }
 
+#popUp {
+  width: 60%;
+  height: 50%;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  top: calc(40% - 50px);
+  left: calc(25% - 30px);
+  margin: 20px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+  border: none;
+}
+
+.containerCardPokemon {
+  display: flex;
+  flex-direction: column;
+}
+
 /*Estilo del nombre*/
-p {
+.containerCardPokemon p {
   font-size: 21px;
   letter-spacing: 0.3mm;
   margin-top: 8px;
   text-transform: capitalize; /*para que cada primera letra este en mayus */
   font-weight: bolder;
-  color: black;
+  color: red;
   margin-bottom: 10px;
   margin-top: 0px;
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
+}
+
+.popUp-name {
+  width: 50%;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Heebo", sans-serif;
+  font-weight: bold;
+  margin: auto;
 }
 
 /* Estilo del type*/
@@ -167,13 +197,19 @@ h5 {
   max-width: 60%;
   height: 20px;
   text-transform: capitalize;
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
 }
 
-.container-pokemon {
-  display: flex;
-  flex-direction: row;
-  width: 100px;
+#close {
+  position: absolute;
+  font-size: 20px;
+  top: 0;
+  right: 0;
+  margin: 15px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: none;
+  cursor: pointer;
 }
 
 #irArribaBoton {
@@ -205,44 +241,6 @@ h5 {
   visibility: visible;
 }
 
-#popUp {
-  width: 60%;
-  height: 50%;
-  position: fixed;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  top: calc(40% - 50px);
-  left: calc(25% - 30px);
-  margin: 20px;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
-  border: none;
-  
-}
-
-.popUp-name {
-  width: 100%;
-  font-size: 20px;
-  text-transform: uppercase;
-  text-align: center;
-  font-family: 'Heebo', sans-serif;
-  font-weight: bold;
-
-}
-
-#close {
-  position: absolute;
-  font-size: 20px;
-  top: 0;
-  right: 0;
-  margin: 15px;
-  cursor: pointer;
-  opacity: 0.6;
-  border: none;
-  cursor: pointer;
-}
-
 .footer {
   width: 100%;
   height: 80px;
@@ -254,8 +252,6 @@ h5 {
   align-items: center;
   font-size: 18px;
 }
-
-
 
 @media screen and (max-width: 800px) {
   .container {

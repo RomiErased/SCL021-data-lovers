@@ -1,8 +1,9 @@
-// estas funciones son de ejemplo
-//export const example = () => {
-//return 'example';
-//};
-//export const anotherExample = () => {
-//  return 'OMG';
-//};
+
+
+export const filterData = (data,condicion) => {
+    const resultado = data.filter(function (pokemons) {
+        return pokemons.name.includes(condicion);
+    });
+    return resultado;
+}
 
