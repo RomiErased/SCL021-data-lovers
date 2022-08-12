@@ -2668,7 +2668,7 @@ export default {
   },
   {
     "num": "029",
-    "name": "nidoran ♀ (female)",
+    "name": "nidoran ♀",
     "generation": {
       "num": "generation i",
       "name": "kanto"
@@ -2748,7 +2748,7 @@ export default {
     "egg": "5 km",
     "buddy-distance-km": "3",
     "evolution": {
-      "candy": "nidoran ♀ (female) candy",
+      "candy": "nidoran ♀ candy",
       "next-evolution": [{
         "num": "030",
         "name": "nidorina",
@@ -2843,7 +2843,7 @@ export default {
     "egg": "not in eggs",
     "buddy-distance-km": "3",
     "evolution": {
-      "candy": "nidoran ♀ (female) candy",
+      "candy": "nidoran ♀ candy",
       "next-evolution": [{
         "num": "031",
         "name": "nidoqueen",
@@ -2851,7 +2851,7 @@ export default {
       }],
       "prev-evolution": [{
         "num": "029",
-        "name": "nidoran ♀ (female)",
+        "name": "nidoran ♀",
         "candy-cost": "25"
       }]
     }
@@ -2941,14 +2941,14 @@ export default {
     "egg": "not in eggs",
     "buddy-distance-km": "3",
     "evolution": {
-      "candy": "nidoran ♀ (female) candy",
+      "candy": "nidoran ♀ candy",
       "prev-evolution": [{
         "num": "030",
         "name": "nidorina",
         "candy-cost": "100",
         "prev-evolution": [{
           "num": "029",
-          "name": "nidoran ♀ (female)",
+          "name": "nidoran ♀",
           "candy-cost": "25"
         }]
       }]
@@ -2956,7 +2956,7 @@ export default {
   },
   {
     "num": "032",
-    "name": "nidoran ♂ (male)",
+    "name": "nidoran ♂",
     "generation": {
       "num": "generation i",
       "name": "kanto"
@@ -3036,7 +3036,7 @@ export default {
     "egg": "5 km",
     "buddy-distance-km": "3",
     "evolution": {
-      "candy": "nidoran ♂ (male) candy",
+      "candy": "nidoran ♂ candy",
       "next-evolution": [{
         "num": "033",
         "name": "nidorino",
@@ -3131,7 +3131,7 @@ export default {
     "egg": "not in eggs",
     "buddy-distance-km": "3",
     "evolution": {
-      "candy": "nidoran ♂ (male) candy",
+      "candy": "nidoran ♂ candy",
       "next-evolution": [{
         "num": "034",
         "name": "nidoking",
@@ -3139,7 +3139,7 @@ export default {
       }],
       "prev-evolution": [{
         "num": "032",
-        "name": "nidoran ♂ (male)",
+        "name": "nidoran ♂",
         "candy-cost": "25"
       }]
     }
@@ -3236,14 +3236,14 @@ export default {
     "egg": "not in eggs",
     "buddy-distance-km": "3",
     "evolution": {
-      "candy": "nidoran ♂ (male) candy",
+      "candy": "nidoran ♂ candy",
       "prev-evolution": [{
         "num": "033",
         "name": "nidorino",
         "candy-cost": "100",
         "prev-evolution": [{
           "num": "032",
-          "name": "nidoran ♂ (male)",
+          "name": "nidoran ♂",
           "candy-cost": "25"
         }]
       }]

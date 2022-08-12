@@ -12,59 +12,63 @@ function renderpokemon(pokemons = dataPokemon) {
     // Crear un div para cada pokemon
     const cardPokemon = document.createElement("div");
     cardPokemon.classList.add("pokemon-card");
-    //Crear etiqueta p para nombres
-    const div = document.createElement("p");
-    div.textContent = ` ${pokemons[i].name} `;
-    pokedex.appendChild(div);
+
+    //Crear etiqueta p para nombres y clase
+    const pokemonCardName = document.createElement("p");
+    pokemonCardName.textContent = ` ${pokemons[i].name} `;
+    pokedex.appendChild(pokemonCardName);
+    pokemonCardName.classList.add("pokemonCardName");
+
     //Crear etiqueta img para agregar imagenes
     const img = document.createElement("img");
     img.src = `${pokemons[i].img}`;
     pokedex.appendChild(cardPokemon);
-    //Crear etiqueta p para obtener los tipos de pokemon
-    const typePokemon = document.createElement("h5");
+    
+    //Crear etiqueta p para obtener los tipos de pokemon y clase
+    const typePokemon = document.createElement("p");
     typePokemon.textContent = `${pokemons[i].type}`;
     pokedex.appendChild(typePokemon);
+    typePokemon.classList.add("typePokemonCard")
 
     //Crear evento para abrir el popUp
     cardPokemon.addEventListener("click", () => {
-      console.log(popUp.open)
       if (popUp.open === true) {
         while (popUp.children.length > 1) {
           popUp.removeChild(popUp.lastChild)
         }
       }
       popUp.open = true;
+
+      // Crear div padre 
       const containerCardPokemon = document.createElement("div");
       containerCardPokemon.classList.add("containerCardPokemon");
 
-      //Crear un div para traer el name
-      const popUpName = document.createElement("h1");
-      popUpName.innerHTML = pokemons[i].name;
-      //Crear una clase para los name dentro del popUp
-      popUpName.classList.add("popUp-name");
-
-      //Crear un p para traer el number de cada pokemon
-      const numberPokemon = document.createElement("p");
-      numberPokemon.innerHTML = `Number: ${pokemons[i].num}`;
-
+      //Crear etiqueta p para traer el nombre y numero
+      const popUpName = document.createElement("p");
+      popUpName.innerHTML = `${pokemons[i].name}  #${pokemons[i].num}`;
+      popUpName.classList.add("namePokemon");
+    
       //Crear un p para traer about
       const aboutPokemon = document.createElement("p");
-      aboutPokemon.innerHTML = `About: ${pokemons[i].about}`;
+      aboutPokemon.innerHTML = `About this pokemon: ${pokemons[i].about}`;
+      aboutPokemon.classList.add("aboutPokemon");
 
-      //Crear un div para traer las debilidades
+      //Crear un p para traer las debilidades
       const weaknessesPokemon = document.createElement("p");
       weaknessesPokemon.innerHTML = `Weaknesses: ${pokemons[i].weaknesses}`;
+      weaknessesPokemon.classList.add("weaknessesPokemon");
 
       //Crear un div para traer el nombre de la generacion
       const generationPokemon = document.createElement("p");
-      generationPokemon.innerHTML = `Generation:${pokemons[i].generation.name},  Number:${pokemons[i].generation.num}`;
+      generationPokemon.innerHTML = `Generation:${pokemons[i].generation.name}  Number:${pokemons[i].generation.num}`;
+      generationPokemon.classList.add("generationPokemon");
 
       //Crear un div para traer las resistencias
       const resistantPokemon = document.createElement("p");
       resistantPokemon.innerHTML = `Resistance: ${pokemons[i].resistant}`;
+      resistantPokemon.classList.add("resistantPokemon");
 
       containerCardPokemon.appendChild(popUpName);
-      containerCardPokemon.appendChild(numberPokemon);
       containerCardPokemon.appendChild(aboutPokemon);
       containerCardPokemon.appendChild(weaknessesPokemon);
       containerCardPokemon.appendChild(generationPokemon);
@@ -78,7 +82,7 @@ function renderpokemon(pokemons = dataPokemon) {
       });
     });
     cardPokemon.appendChild(img);
-    cardPokemon.appendChild(div);
+    cardPokemon.appendChild(pokemonCardName);
     cardPokemon.appendChild(typePokemon);
   }
 }
