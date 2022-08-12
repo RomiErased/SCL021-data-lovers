@@ -7,9 +7,8 @@
 body {
   background: url(img/fondo.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; 
   background-attachment: fixed;
-  height: 20em;
 }
 
 .container {
@@ -37,7 +36,8 @@ nav {
   height: 80px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: baseline;
 }
 
 input {
@@ -80,6 +80,8 @@ button[type="submit"]:hover {
   font-size: 18px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  height: 80px;
+  width: 18%;
 }
 
 .filter-condition select {
@@ -104,6 +106,12 @@ button[type="submit"]:hover {
   font-weight: bold;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sort-AZ {
+  padding: 15px;
+  height: 90px;
+  width: 18%;
 }
 
 .sort-AZ select {
@@ -151,6 +159,7 @@ main {
   height: 200px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
   background: rgba(235, 233, 233, 0.2);
+  cursor: pointer;
 }
 
 .pokemon-card img {
@@ -168,6 +177,7 @@ p {
   color: black;
   margin-bottom: 10px;
   margin-top: 0px;
+  font-family: 'Heebo', sans-serif;
 }
 
 /* Estilo del type*/
@@ -179,6 +189,7 @@ h5 {
   max-width: 60%;
   height: 20px;
   text-transform: capitalize;
+  font-family: 'Heebo', sans-serif;
 }
 
 .container-pokemon {
@@ -217,10 +228,57 @@ h5 {
 }
 
 #popUp {
+  width: 60%;
+  height: 50%;
   position: fixed;
   top: calc(50% - 50px);
   left: calc(50% - 50px);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  top: calc(40% - 50px);
+  left: calc(25% - 30px);
+  margin: 20px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+  border: none;
+  
 }
+
+.popUp-name {
+  width: 100%;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Heebo', sans-serif;
+  font-weight: bold;
+
+}
+
+#close {
+  position: absolute;
+  font-size: 20px;
+  top: 0;
+  right: 0;
+  margin: 15px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: none;
+  cursor: pointer;
+}
+
+.footer {
+  width: 100%;
+  height: 80px;
+  background: #ffde00;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+}
+
 
 @media screen and (max-width: 800px) {
   .container {

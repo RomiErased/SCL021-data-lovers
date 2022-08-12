@@ -1,7 +1,7 @@
 import data from "./data/pokemon/pokemon.js";
 
 const pokedex = document.getElementById("root");
-const close = document.getElementById ("close");
+const close = document.getElementById("close");
 
 let dataPokemon = data.pokemon;
 function renderpokemon(pokemons = dataPokemon) {
@@ -22,25 +22,69 @@ function renderpokemon(pokemons = dataPokemon) {
     const typePokemon = document.createElement("h5");
     typePokemon.textContent = `${pokemons[i].type}`;
     pokedex.appendChild(typePokemon);
-
+    //Crear evento para abrir el popUp
     cardPokemon.addEventListener("click", () => {
       popUp.open = true;
-      const popUpContent = document.createElement("div");
-      popUpContent.innerHTML = pokemons[i].name;
-      popUp.removeChild(popUp.lastChild);
-      popUp.appendChild(popUpContent);
-    })
+      const containerCardPokemon = document.createElement("div");
+      //Crear un div para traer el name 
+      const popUpName = document.createElement("p");
+      popUpName.innerHTML = pokemons[i].name;
+     
+      //Crear una clase para los name dentro del popUp
+      popUpName.classList.add("popUp-name");
+      
+      //Crear un div para traer el number de cada pokemon
+      const numberPokemon = document.createElement("p");
+      numberPokemon.innerHTML = pokemons[i].num;
+      
+      //Crear un div para traer about
+      const aboutPokemon = document.createElement("p");
+      aboutPokemon.innerHTML = pokemons[i].about;
+      
+      //Crear un div para traer las debilidades
+      const weaknessesPokemon = document.createElement("p");
+      weaknessesPokemon.innerHTML = pokemons[i].weaknesses;
+      
+      //Crear un div para traer el nombre de la generacion
+      const generationPokemon = document.createElement("p");
+      generationPokemon.innerHTML = pokemons[i].generation.name;
+      
+      //Crear un div para traer el numero de la generacion
+      const numPokemon = document.createElement("p");
+      numPokemon.innerHTML = pokemons[i].generation.num;
+      
+      //Crear un div para traer las resistencias
+      const resistantPokemon = document.createElement("p");
+      resistantPokemon.innerHTML = pokemons[i].resistant;
+      
+      containerCardPokemon.appendChild(popUpName);
+      containerCardPokemon.appendChild(numberPokemon);
+      containerCardPokemon.appendChild(aboutPokemon);
+      containerCardPokemon.appendChild(weaknessesPokemon);
+      containerCardPokemon.appendChild(generationPokemon);
+      containerCardPokemon.appendChild(numPokemon);
+      containerCardPokemon.appendChild(resistantPokemon);
+      popUp.appendChild(containerCardPokemon);
+      close.addEventListener("click", () => {
+        popUp.open = false;
+        document.getElementById("popUp").innerHTML = "";
+      });
+      //Crear un div para traer quick-move NO FUNCIONA
+      // const movePokemon = document.createElement ("div");
+      // movePokemon.innerHTML = pokemons[i].quick-move.name;
+      // popUp.appendChild(movePokemon);
+      // Size con height y weight
+      // special-attack
+      //
+    });
     cardPokemon.appendChild(img);
     cardPokemon.appendChild(div);
     cardPokemon.appendChild(typePokemon);
-
   }
 }
 renderpokemon();
 
-
-
-//funcion para recargar la página desde el header
+//Funcion para recargar la página desde el header
 const title = document.querySelector(".title");
 title.addEventListener("click", function () {
   location.reload();
@@ -52,9 +96,7 @@ const selectSort = document.querySelector(".sort-AZ");
 const selectType = document.querySelector(".select-type");
 const popUp = document.querySelector("#popUp");
 
-close.addEventListener ("click", () => {
-  popUp.open = false;
-});
+// Cerrar popUp
 
 
 //Filtrar según busqueda
@@ -66,7 +108,6 @@ formSearch.addEventListener("submit", function (event) {
   renderpokemon(resultado);
 });
 
-
 // Ordenar alfabéticamente
 function handleSortChange(event) {
   //console.log(event.target.value);
@@ -77,11 +118,11 @@ function handleSortChange(event) {
   renderpokemon(result);
 }
 // Filtrar según tipo de pokemon
-function handleTypeChange (event) {
+function handleTypeChange(event) {
   //console.log(event.target.value);
-  let allPokemon = [...dataPokemon]
-  if (event.target.value === "all") {
-    renderpokemon(allPokemon)
+  let allPokemon = [...dataPokemon];
+  if (event.target.value === "default") {
+    renderpokemon(allPokemon);
     return;
   }
   const resultType = allPokemon.filter(function (allPokemon) {
@@ -89,33 +130,6 @@ function handleTypeChange (event) {
   });
   renderpokemon(resultType);
 }
-
-selectSort.addEventListener("change",handleSortChange);
-selectType.addEventListener("change",handleTypeChange);
-
-//funcionalidad de botón inferior derecho para subir al principio
-addEventListener("DOMContentLoaded", () => {
-  const irArribaBoton = document.querySelector("#irArribaBoton");
-
-  const obtener_pixeles_inicio = () =>
-    document.documentElement.scrollTop || document.body.scrollTop;
-
-  const irArriba = () => {
-    if (obtener_pixeles_inicio() > 0) {
-      requestAnimationFrame(irArriba);
-      scrollTo(0, obtener_pixeles_inicio() - obtener_pixeles_inicio() / 20);
-    }
-    const indicarScroll = () => {
-      if (obtener_pixeles_inicio() > 50) {
-        irArribaBoton.className = "mostrar";
-      } else {
-        irArribaBoton.className = "ocultar";
-      }
-    };
-    window.addEventListener("scroll", indicarScroll);
-  };
-  irArribaBoton.addEventListener("click", irArriba);
-});
 
 selectSort.addEventListener("change", handleSortChange);
 selectType.addEventListener("change", handleTypeChange);
@@ -144,3 +158,5 @@ addEventListener("DOMContentLoaded", () => {
   irArribaBoton.addEventListener("click", irArriba);
 });
 
+selectSort.addEventListener("change", handleSortChange);
+selectType.addEventListener("change", handleTypeChange);
