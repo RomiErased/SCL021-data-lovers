@@ -5,17 +5,17 @@ import {filterData, handleSortChange, handleTypeChange} from "./data.js";
 const pokedex = document.getElementById("root");
 const close = document.getElementById("close");
 
-export let dataPokemon = data.pokemon;
-export function renderpokemon(pokemons = dataPokemon) {
+let dataPokemon = data.pokemon;
+function renderpokemon(pokemons = dataPokemon) {
   pokedex.innerHTML = "";
   for (let i = 0; i < pokemons.length; i++) {
     // Crear un div para cada pokemon
     const cardPokemon = document.createElement("div");
     cardPokemon.classList.add("pokemon-card");
 
-    //Crear etiqueta p para nombres y clase
+    //Crear etiqueta p para nombres
     const pokemonCardName = document.createElement("p");
-    pokemonCardName.textContent = ` ${pokemons[i].name} `;
+    pokemonCardName.textContent = `${pokemons[i].name} `;
     pokedex.appendChild(pokemonCardName);
     pokemonCardName.classList.add("pokemonCardName");
 
@@ -24,7 +24,7 @@ export function renderpokemon(pokemons = dataPokemon) {
     img.src = `${pokemons[i].img}`;
     pokedex.appendChild(cardPokemon);
 
-    //Crear etiqueta p para obtener los tipos de pokemon y clase
+    //Crear etiqueta p para obtener los tipos de pokemon
     const typePokemon = document.createElement("p");
     typePokemon.textContent = `${pokemons[i].type}`;
     pokedex.appendChild(typePokemon);
@@ -78,7 +78,7 @@ export function renderpokemon(pokemons = dataPokemon) {
       attackPokemon.textContent = "Special Attack: ";
       for (let j = 0; j < pokemons[i]["special-attack"].length; j++) {
        // 1. obtener el name del special-attack
-       // 2. queremos concatenarlo en un string general separandolos por comas
+       // 2. queremos concatenarlo en un string general 
        const specialAttack = pokemons[i]["special-attack"][j];
        const specialAttackName = specialAttack.name;
        attackPokemon.textContent = attackPokemon.textContent + specialAttackName;

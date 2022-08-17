@@ -8,7 +8,7 @@ describe("data.js", () => {
 
     let result = handleSortChange(eventoPrueba, dataPrueba)
 
-    expect (result[0].name).toEqual("pikachu");
+    expect (result[0].name).toEqual("charmander");
   });
 });
 

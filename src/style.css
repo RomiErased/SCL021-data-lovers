@@ -73,7 +73,6 @@ button[type="submit"]:hover {
 }
 
 .filter-condition {
-  /* padding: 10px; */
   height: 30px;
   width: 17%;
   margin: 10px;
@@ -104,7 +103,6 @@ button[type="submit"]:hover {
 }
 
 .sort-AZ {
-  /* padding: 15px; */
   margin: 10px;
   height: 30px;
   width: 15%;
@@ -204,13 +202,13 @@ main {
 /*Estilo del box popup*/
 #popUp {
   width: 60%;
-  height: 55%;
+  height: 52%;
   position: fixed;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   top: calc(40% - 50px);
   left: calc(25% - 30px);
-  margin: 20px;
+  margin-bottom: 5px;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
@@ -340,9 +338,7 @@ main {
 }
 
 @media screen and (max-width: 1070px) {
-  nav {
-    /* justify-content: space-around; */
-  }
+  
   nav .button-search {
     width: 25%;
   }
