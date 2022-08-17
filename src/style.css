@@ -9,6 +9,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  position: relative;
+  padding-bottom: 3em;
+  min-height: 100vh;
 }
 
 .container {
@@ -41,10 +44,9 @@ nav {
   align-items: baseline;
 }
 
-
 input[type="text"] {
   background: #fff;
-  width: 350px;
+  width: 300px;
   height: 30px;
   border: none;
   outline: none;
@@ -57,7 +59,7 @@ input[type="text"] {
   position: relative;
   left: -5px;
   border-radius: 0px 25px 25px 0;
-  width: 150px;
+  width: 100px;
   height: 30px;
   border: none;
   outline: none;
@@ -71,9 +73,10 @@ button[type="submit"]:hover {
 }
 
 .filter-condition {
-  padding: 15px;
-  height: 60px;
+  /* padding: 10px; */
+  height: 30px;
   width: 17%;
+  margin: 10px;
 }
 
 .filter-condition select {
@@ -90,7 +93,7 @@ button[type="submit"]:hover {
 }
 
 .filter-condition .select-type {
- font-size: 15px;
+ font-size: 12px;
  margin:0px;
 }
 
@@ -101,8 +104,9 @@ button[type="submit"]:hover {
 }
 
 .sort-AZ {
-  padding: 15px;
-  height: 80px;
+  /* padding: 15px; */
+  margin: 10px;
+  height: 30px;
   width: 15%;
 }
 
@@ -123,7 +127,7 @@ button[type="submit"]:hover {
   color: #ffff;
   background: #cc0000;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 12px;
   font-family: 'Heebo', sans-serif;
   letter-spacing: 1px;
 }
@@ -143,6 +147,7 @@ main {
   justify-content: center;
   margin: 0 auto;
   max-width: 1200px;
+  margin-bottom: 50px;
 }
 
 /* Estilos de las card */
@@ -199,9 +204,9 @@ main {
 /*Estilo del box popup*/
 #popUp {
   width: 60%;
-  height: 50%;
+  height: 55%;
   position: fixed;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   top: calc(40% - 50px);
   left: calc(25% - 30px);
@@ -233,7 +238,9 @@ main {
 .aboutPokemon,
 .weaknessesPokemon,
 .generationPokemon,
-.resistantPokemon {
+.resistantPokemon,
+.attackPokemon,
+.quickPokemon {
   width: 100%;
   font-size: 15px;
   font-family: 'Heebo', sans-serif;
@@ -244,7 +251,9 @@ main {
 
 .weaknessesPokemon,
 .generationPokemon,
-.resistantPokemon {
+.resistantPokemon,
+.attackPokemon,
+.quickPokemon {
   text-transform: capitalize;
 }
 
@@ -266,8 +275,8 @@ main {
 #irArribaBoton {
   position: fixed;
   z-index: 1000;
-  right: 25px;
-  bottom: 25px;
+  right: 30px;
+  bottom: 60px;
   background-color: #3b4cca;
   width: 64px;
   height: 64px;
@@ -301,15 +310,22 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 18px;
+  font-size: 15px;
+  font-family: 'Heebo', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 0;
+}
+
+
+.RRSS {
+ margin: 5px;
 }
 
 @media screen and (max-width: 800px) {
   .container {
     flex-direction: column;
-  }
-
-  body {
   }
 
   header {
@@ -320,10 +336,30 @@ main {
   header .logo {
     margin: 20px 0;
   }
+
 }
 
-@media screen and (max-width: 1068px) {
+@media screen and (max-width: 1070px) {
+  nav {
+    /* justify-content: space-around; */
+  }
   nav .button-search {
-    width: 15%;
+    width: 25%;
+  }
+
+  input[type="text"]{
+    width: 70%;
+  }
+
+  .sort-AZ {
+    width: 20%;
   }
 }
+
+@media screen and (max-width: 1227px) {
+  .filter-condition {
+    width: 30%;
+  }
+}
+
+

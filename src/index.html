@@ -9,10 +9,10 @@
   </head> 
 
   <body>
-    <!-- <audio controls autoplay>
-      <source src="audio/musicpokemon.mp3">
-    </audio> -->
     <div class="container">
+      <audio controls>
+        <source src="audio/musicpokemon.mp3">
+      </audio>
       <header class="header">
         <img src="img/logopikachu.png" width="81" height="68" alt="" />
           <div class="title">
@@ -28,7 +28,7 @@
           </select>
       </div>
         <form class="search">
-           <input class="inputSearch" type="text" placeholder="¿Who's that Pokémon?"/>
+           <input class="inputSearch" type="text" placeholder="Who's that Pokémon?"/>
            <button class="button-search" type="submit" name="" value="Search">Search</button>
         </form>
         <div class="filter-condition">
@@ -58,19 +58,25 @@
       </nav>
       <main>
         <div class="root" id="root"></div>
-        <a href=""> <div id="irArribaBoton"></a>
-          <i class= "fa fa-angle-up fa-4x"> </i></div> 
+         <div id="irArribaBoton"><a href=""></a>
+        <div><i class= "fa fa-angle-up fa-4x"></i></div></div>
+        
       </main>
     </div>
-  </div>
-  <!--Crear popUp-->
+ <!--Crear popUp-->
   <dialog id="popUp">
     <button id="close">x</button> 
   </dialog>
   <footer class="footer">
-    <span>2022 ® Poképedia. Proyecto Data-lovers, Laboratoria</span>
+    <span>® Poképedia. Proyecto Data-lovers, Laboratoria</span>
+    <div class="RRSS">
+    <img src="img/instagram.png" width="30px" height="30px" alt="instagram">
+    <img src="img/twitter.png" width="30px" height="30px" alt="twitter">
+    <img src="img/facebook.png" width="30px" height="30px" alt="facebook">
+    </div>
   </footer>
   <script src="main.js" type="module"></script>
-  <script src="data.js" type="module"></script>
+  <!-- <script src="data.js" type="module"></script> -->
+ 
   </body>
 </html>
