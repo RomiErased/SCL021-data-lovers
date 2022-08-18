@@ -1,6 +1,5 @@
 import data from "./data/pokemon/pokemon.js";
-import {filterData, handleSortChange, handleTypeChange} from "./data.js";
-
+import { filterData, handleSortChange, handleTypeChange } from "./data.js";
 
 const pokedex = document.getElementById("root");
 const close = document.getElementById("close");
@@ -76,15 +75,12 @@ function renderpokemon(pokemons = dataPokemon) {
       //Crear una etiqueta p para traer ataques especiales
       const attackPokemon = document.createElement("p");
       attackPokemon.textContent = "Special Attack: ";
-      for (let j = 0; j < pokemons[i]["special-attack"].length; j++) {
-       // 1. obtener el name del special-attack
-       // 2. queremos concatenarlo en un string general 
-       const specialAttack = pokemons[i]["special-attack"][j];
-       const specialAttackName = specialAttack.name;
-       attackPokemon.textContent = attackPokemon.textContent + specialAttackName;
-     }
-     attackPokemon.classList.add("attackPokemon");
-      
+      //console.log(pokemons[i]["special-attack"]);
+      let arrAttacksPokemon = pokemons[i]["special-attack"]
+        .map((item) => item.name)
+        .join(", ");
+      attackPokemon.textContent = attackPokemon.textContent + arrAttacksPokemon;
+      attackPokemon.classList.add("attackPokemon");
 
       containerCardPokemon.appendChild(popUpName);
       containerCardPokemon.appendChild(aboutPokemon);
@@ -126,19 +122,17 @@ formSearch.addEventListener("submit", function (event) {
   renderpokemon(result);
 });
 
-
 //Evento que se ejecuta al ordenar los pokemon A-Z
 selectSort.addEventListener("change", (event) => {
-  let sort = handleSortChange(event,dataPokemon)
-  renderpokemon(sort)
+  let sort = handleSortChange(event, dataPokemon);
+  renderpokemon(sort);
 });
 
 //Evento que se ejecuta al seleccionar un tipo de pokemon
-selectType.addEventListener("change",(event) => {
-  let type = handleTypeChange(event, dataPokemon)
+selectType.addEventListener("change", (event) => {
+  let type = handleTypeChange(event, dataPokemon);
   renderpokemon(type);
 });
-
 
 //Funcionalidad de botón inferior derecho para subir al principio
 addEventListener("DOMContentLoaded", () => {
