@@ -3,10 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <title>Pokepedia Interactiva</title>
-    <script src= " https://kit.fontawesome.com/c1eae85dfa.js" crossorigin="anonymous"></script>
+    <script
+      src=" https://kit.fontawesome.com/c1eae85dfa.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-  </head> 
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+  </head>
 
   <body>
     <!-- <audio controls autoplay>
@@ -15,62 +21,67 @@
     <div class="container">
       <header class="header">
         <img src="img/logopikachu.png" width="81" height="68" alt="" />
-          <div class="title">
-      <img src="img/title.png" width="632.37" height="100" alt="" />
+        <div class="title">
+          <img src="img/title.png" width="632.37" height="100" alt="" />
         </div>
       </header>
       <nav>
         <div class="sort-AZ">
           <span> Sort by </span>
           <select name="" id="sort">
-            <option value=""> Default</option>
-            <option value="a-z"> A-Z </option>
+            <option value="">Default</option>
+            <option value="a-z">A-Z</option>
           </select>
-      </div>
+        </div>
         <form class="search">
-           <input class="inputSearch" type="text" placeholder="¿Who's that Pokémon?"/>
-           <button class="button-search" type="submit" name="" value="Search">Search</button>
+          <input
+            class="inputSearch"
+            type="text"
+            placeholder="¿Who's that Pokémon?"
+          />
+          <button class="button-search" type="submit" name="" value="Search">
+            Search
+          </button>
         </form>
         <div class="filter-condition">
           <span>Filter by type </span>
           <select name="" class="select-type">
-              <option value="default"> Default </option>
-              <option value="bug"> Bug </option>
-              <option value="dark"> Dark </option>
-              <option value="dragon"> Dragon </option>
-              <option value="electric"> Electric </option>
-              <option value="fairy"> Fairy </option>
-              <option value="fighting"> Fighting </option>
-              <option value="fire"> Fire </option>
-              <option value="flying"> Flying </option>
-              <option value="ghost"> Ghost </option>
-              <option value="grass"> Grass </option>
-              <option value= "ground"> Ground </option>
-              <option value="ice"> Ice </option>
-              <option value="normal"> Normal </option>
-              <option value="poison"> Poison </option>
-              <option value="psychic"> Psychic </option>
-              <option value="rock"> Rock </option>
-              <option value="steel"> Steel </option>
-              <option value="water"> Water </option>
+            <option value="default">Default</option>
+            <option value="bug">Bug</option>
+            <option value="dark">Dark</option>
+            <option value="dragon">Dragon</option>
+            <option value="electric">Electric</option>
+            <option value="fairy">Fairy</option>
+            <option value="fighting">Fighting</option>
+            <option value="fire">Fire</option>
+            <option value="flying">Flying</option>
+            <option value="ghost">Ghost</option>
+            <option value="grass">Grass</option>
+            <option value="ground">Ground</option>
+            <option value="ice">Ice</option>
+            <option value="normal">Normal</option>
+            <option value="poison">Poison</option>
+            <option value="psychic">Psychic</option>
+            <option value="rock">Rock</option>
+            <option value="steel">Steel</option>
+            <option value="water">Water</option>
           </select>
         </div>
       </nav>
       <main>
         <div class="root" id="root"></div>
         <a href=""> <div id="irArribaBoton"></a>
-          <i class= "fa fa-angle-up fa-4x"> </i></div> 
-      </main>
+        <i class="fa fa-angle-up fa-4x"> </i></div></main>
+    
     </div>
-  </div>
-  <!--Crear popUp-->
-  <dialog id="popUp">
-    <button id="close">x</button> 
-  </dialog>
-  <footer class="footer">
-    <span>2022 ® Poképedia. Proyecto Data-lovers, Laboratoria</span>
-  </footer>
-  <script src="main.js" type="module"></script>
-  <script src="data.js" type="module"></script>
+    <!--Crear popUp-->
+    <dialog id="popUp">
+      <button id="close">x</button>
+    </dialog>
+    <footer class="footer">
+      <span>2022 ® Poképedia. Proyecto Data-lovers, Laboratoria</span>
+    </footer>
+    <script src="main.js" type="module"></script>
+    <script src="data.js" type="module"></script>
   </body>
 </html>
