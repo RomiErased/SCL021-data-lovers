@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(img/fondo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  padding-bottom: 3em;
+  min-height: 100vh;
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.header {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.title {
+  cursor: pointer;
+}
+
+nav {
+  background: #ffde00;
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+
+input[type="text"] {
+  background: #fff;
+  width: 300px;
+  height: 30px;
+  border: none;
+  outline: none;
+  padding: 0 25px;
+  border-radius: 25px 0px 0px 25px;
+  text-align: center;
+}
+
+.button-search {
+  position: relative;
+  left: -5px;
+  border-radius: 0px 25px 25px 0;
+  width: 100px;
+  height: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #cc0000;
+  color: #fff;
+}
+
+button[type="submit"]:hover {
+  background: #3b4cca;
+}
+
+.filter-condition {
+  height: 30px;
+  width: 17%;
+  margin: 10px;
+}
+
+.filter-condition select {
+  width: 100px;
+  height: 30px;
+  padding: 0px 0 0 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  color: #fff;
+  background: #cc0000;
+  cursor: pointer;
+  font-family: 'Heebo', sans-serif;
+  letter-spacing: 1px;
+}
+
+.filter-condition .select-type {
+ font-size: 12px;
+ margin:0px;
+}
+
+.filter-condition span {
+  font-family: 'Heebo', sans-serif;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.sort-AZ {
+  margin: 10px;
+  height: 30px;
+  width: 15%;
+}
+
+.sort-AZ span {
+  font-family: 'Heebo', sans-serif;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.sort-AZ select {
+  width: 100px;
+  height: 30px;
+  margin: 0px;
+  padding: 0 0 0 10px;
+  border-radius: 25px 25px 25px 25px;
+  outline: none;
+  font-weight: bold;
+  color: #ffff;
+  background: #cc0000;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: 'Heebo', sans-serif;
+  letter-spacing: 1px;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-bottom: 50px;
+}
+
+/* Estilos de las card */
+
+.pokemon-card {
+  border-radius: 20px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  background: rgba(235, 233, 233, 0.2);
+  cursor: pointer;
+}
+
+.pokemon-card:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3%);
+}
+
+.pokemon-card img {
+  width: 120px;
+  height: 120px;
+}
+
+.pokemonCardName {
+  font-size: 20px;
+  text-transform:capitalize;
+  font-family: 'Heebo', sans-serif;
+  margin: 3px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: #ffff;
+}
+
+.typePokemonCard {
+  font-size: 13px;
+  letter-spacing:1px;
+  width: 80%;
+  height: 20px;
+  margin: auto;
+  padding:2px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight:bolder;
+  color: black;
+  background-color: #ffde00;
+}
+
+/*Estilos del popUp*/
+
+/*Estilo del box popup*/
+#popUp {
+  width: 60%;
+  height: 52%;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  top: calc(40% - 50px);
+  left: calc(25% - 30px);
+  margin-bottom: 5px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+  border: none;
+}
+
+/* Contiene toda la info de cada pokemon (padre) */
+.containerCardPokemon {
+  display: flex;
+  flex-direction: column;
+  margin:10px;
+}
+
+/*Estilos de los nombres*/
+.namePokemon {
+  margin: 10px;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-family: 'Heebo', sans-serif;
+  font-weight: bolder;
+  align-self: center;
+  letter-spacing: 3px;
+}
+
+.aboutPokemon,
+.weaknessesPokemon,
+.generationPokemon,
+.resistantPokemon,
+.attackPokemon,
+.quickPokemon {
+  width: 100%;
+  font-size: 15px;
+  font-family: 'Heebo', sans-serif;
+  font-weight:lighter;
+  margin: 10px;
+  letter-spacing: 2px;
+}
+
+.weaknessesPokemon,
+.generationPokemon,
+.resistantPokemon,
+.attackPokemon,
+.quickPokemon {
+  text-transform: capitalize;
+}
+
+/* Estilos del boton para cerrar el popUp */
+#close {
+  position: absolute;
+  font-size: 20px;
+  top: 0;
+  right: 0;
+  margin: 15px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Estilos del boton */
+#irArribaBoton {
+  position: fixed;
+  z-index: 1000;
+  right: 30px;
+  bottom: 60px;
+  background-color: #3b4cca;
+  width: 64px;
+  height: 64px;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+#irArribaBoton:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.ocultar {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mostrar {
+  opacity: 1;
+  visibility: visible;
+}
+
+.footer {
+  width: 100%;
+  height: 80px;
+  background: #ffde00;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  font-family: 'Heebo', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 0;
+}
+
+
+.RRSS {
+ margin: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  header {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  header .logo {
+    margin: 20px 0;
+  }
+
+}
+
+@media screen and (max-width: 1070px) {
+  
+  nav .button-search {
+    width: 25%;
+  }
+
+  input[type="text"]{
+    width: 70%;
+  }
+
+  .sort-AZ {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1227px) {
+  .filter-condition {
+    width: 30%;
+  }
+}
