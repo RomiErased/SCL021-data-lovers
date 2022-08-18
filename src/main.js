@@ -1,5 +1,5 @@
 import data from "./data/pokemon/pokemon.js";
-import { filterData } from "./data.js";
+import { filterData, handleSortChange, handleTypeChange } from "./data.js";
 
 const pokedex = document.getElementById("root");
 const close = document.getElementById("close");
@@ -12,9 +12,9 @@ function renderpokemon(pokemons = dataPokemon) {
     const cardPokemon = document.createElement("div");
     cardPokemon.classList.add("pokemon-card");
 
-    //Crear etiqueta p para nombres y clase
+    //Crear etiqueta p para nombres
     const pokemonCardName = document.createElement("p");
-    pokemonCardName.textContent = ` ${pokemons[i].name} `;
+    pokemonCardName.textContent = `${pokemons[i].name} `;
     pokedex.appendChild(pokemonCardName);
     pokemonCardName.classList.add("pokemonCardName");
 
@@ -23,7 +23,7 @@ function renderpokemon(pokemons = dataPokemon) {
     img.src = `${pokemons[i].img}`;
     pokedex.appendChild(cardPokemon);
 
-    //Crear etiqueta p para obtener los tipos de pokemon y clase
+    //Crear etiqueta p para obtener los tipos de pokemon
     const typePokemon = document.createElement("p");
     typePokemon.textContent = `${pokemons[i].type}`;
     pokedex.appendChild(typePokemon);
@@ -57,17 +57,17 @@ function renderpokemon(pokemons = dataPokemon) {
       weaknessesPokemon.innerHTML = `Weaknesses: ${pokemons[i].weaknesses}`;
       weaknessesPokemon.classList.add("weaknessesPokemon");
 
-      //Crear un div para traer el nombre de la generacion
+      //Crear una etiqueta p para traer el nombre de la generacion
       const generationPokemon = document.createElement("p");
       generationPokemon.innerHTML = `Generation:${pokemons[i].generation.name}  Number:${pokemons[i].generation.num}`;
       generationPokemon.classList.add("generationPokemon");
 
-      //Crear un div para traer las resistencias
+      //Crear una etiqueta p para traer las resistencias
       const resistantPokemon = document.createElement("p");
       resistantPokemon.innerHTML = `Resistance: ${pokemons[i].resistant}`;
       resistantPokemon.classList.add("resistantPokemon");
 
-      //Crear un div para traer los ataques basicos
+      //Crear una etiqueta p para traer los ataques basicos
       const quickPokemon = document.createElement("p");
       quickPokemon.innerHTML = `Quick Move: ${pokemons[i]["quick-move"][0].name}, ${pokemons[i]["quick-move"][1].name}`;
       quickPokemon.classList.add("quickPokemon");
@@ -82,9 +82,6 @@ function renderpokemon(pokemons = dataPokemon) {
       attackPokemon.textContent = attackPokemon.textContent + arrAttacksPokemon;
       attackPokemon.classList.add("attackPokemon");
 
-      /*${pokemons[i]["special-attack"][1].name}, 
-     ${pokemons[i]["special-attack"][2].name};*/
-
       containerCardPokemon.appendChild(popUpName);
       containerCardPokemon.appendChild(aboutPokemon);
       containerCardPokemon.appendChild(weaknessesPokemon);
@@ -92,7 +89,6 @@ function renderpokemon(pokemons = dataPokemon) {
       containerCardPokemon.appendChild(resistantPokemon);
       containerCardPokemon.appendChild(quickPokemon);
       containerCardPokemon.appendChild(attackPokemon);
-
       popUp.appendChild(containerCardPokemon);
 
       close.addEventListener("click", () => {
@@ -114,7 +110,7 @@ title.addEventListener("click", function () {
 });
 
 const search = document.querySelector(".inputSearch");
-const formSearch = document.querySelector(".search"); //funcion para que al dar enter o presionar search en barra buscadora muestre los resultados
+const formSearch = document.querySelector(".search"); //funcion para que al dar enter o presionar search en barra de busqueda muestre los resultados
 const selectSort = document.querySelector(".sort-AZ");
 const selectType = document.querySelector(".select-type");
 const popUp = document.querySelector("#popUp");
@@ -126,31 +122,19 @@ formSearch.addEventListener("submit", function (event) {
   renderpokemon(result);
 });
 
-// Ordenar alfabéticamente
-function handleSortChange(event) {
-  let result = [...dataPokemon];
-  if (event.target.value === "a-z") {
-    result.sort((a, b) => (a.name > b.name ? 1 : -1));
-  }
-  renderpokemon(result);
-}
-// Filtrar según tipo de pokemon
-function handleTypeChange(event) {
-  let allPokemon = [...dataPokemon];
-  if (event.target.value === "default") {
-    renderpokemon(allPokemon);
-    return;
-  }
-  const resultType = allPokemon.filter(function (allPokemon) {
-    return allPokemon.type.includes(event.target.value);
-  });
-  renderpokemon(resultType);
-}
+//Evento que se ejecuta al ordenar los pokemon A-Z
+selectSort.addEventListener("change", (event) => {
+  let sort = handleSortChange(event, dataPokemon);
+  renderpokemon(sort);
+});
 
-selectSort.addEventListener("change", handleSortChange);
-selectType.addEventListener("change", handleTypeChange);
+//Evento que se ejecuta al seleccionar un tipo de pokemon
+selectType.addEventListener("change", (event) => {
+  let type = handleTypeChange(event, dataPokemon);
+  renderpokemon(type);
+});
 
-//funcionalidad de botón inferior derecho para subir al principio
+//Funcionalidad de botón inferior derecho para subir al principio
 addEventListener("DOMContentLoaded", () => {
   const irArribaBoton = document.querySelector("#irArribaBoton");
 

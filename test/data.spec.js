@@ -1,23 +1,25 @@
-import { example, anotherExample } from '../src/data.js';
+import { handleSortChange } from "../src/data.js";
 
 
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
-  });
+describe("data.js", () => {
+  test("Ordena alfabéticmaente en orden creciente ", () => {
+    let dataPrueba = [{name: "pikachu"}, {name: "charmander"}]
+    let eventoPrueba = {target:{value:"a-z"}}
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});
+    let result = handleSortChange(eventoPrueba, dataPrueba)
 
-
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+    expect (result[0].name).toEqual("charmander");
   });
 });
+
+
+
+// describe("handleSortChange", () => {
+//   it("is a function", () => {
+//     expect(typeof handleSortChange).toBe("function");
+//   });
+
+//   it("returns `handleSortChange`", () => {
+//     expect(handleSortChange()).toBe("OMG");
+//   });
+// });
